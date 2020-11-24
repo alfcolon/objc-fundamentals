@@ -7,11 +7,27 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "SyntaxBasics.h"
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
         // insert code here...
-        NSLog(@"Hello, World!");
+        SyntaxBasics *basics = [[SyntaxBasics alloc]
+                                initWithSmallNumber:42
+                                largerNumber:@2398094238];
+        
+        double myNumber = 42.01245;
+        
+        NSLog(@"%f", myNumber);
+        NSLog(@"%.4f", myNumber);
+        
+        [basics explorePrimitives];
+        [basics exploreObjects];
+        [basics exploreCollectionsWithArray:@[@"Malcome Reynolds",
+                                              @"Jean-Luc Picard",
+                                              @"James T. Kirk",
+                                              @"Kathryn Janeway"]];
+        [basics exploreNumbers];
     }
     return 0;
 }
